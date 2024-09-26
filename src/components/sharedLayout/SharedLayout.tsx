@@ -6,7 +6,7 @@ import { Container } from "./SharedLayout.styled";
 
 export const SharedLayout = () => {
     return (       
-    <div >
+    <>
         <Header />
             <main>
             <Container>
@@ -17,6 +17,6 @@ export const SharedLayout = () => {
             </Container>   
         </main>
         <Footer />
-    </div>
+    </>
     );
 };

@@ -4,15 +4,9 @@ import styled from 'styled-components';
 
 export const StyledFooter = styled.footer`
     width: 100%;
-    position: relative;
-    bottom: 0%;
-    margin-top: 20px;
+    margin-top: auto;
     background: var(--bgd-header);
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+   
 
     @media screen and (min-width: 768px) {
         padding: 30px;

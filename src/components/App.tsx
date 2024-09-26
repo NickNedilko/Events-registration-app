@@ -1,6 +1,5 @@
 
 import { Route, Routes } from 'react-router-dom'
-import './App.css'
 import { SharedLayout } from './sharedLayout/SharedLayout'
 import EventPage from '../pages/EventsPage'
 
