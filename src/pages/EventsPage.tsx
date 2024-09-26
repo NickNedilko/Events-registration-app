@@ -1,3 +1,5 @@
+import EventsList from "../components/events-list/EventsList";
+
 
 
 
@@ -5,9 +7,7 @@
 const EventPage = () => {
 
     return (
-        <div>
-            
-        </div>
+        <EventsList/>
     )
 }
 export default EventPage;

@@ -8,7 +8,7 @@ import { Event } from "../../services/eventsApi";
 
 
 export const EventCard: FC<Event> = ({id, title, description, organizer, event_date}) => {
- const formattedDate = new Date(event_date).toLocaleDateString()
+  const formattedDate = new Date(event_date).toLocaleDateString();
   return (
     <Card>
       <Title>{title}</Title>
@@ -16,7 +16,7 @@ export const EventCard: FC<Event> = ({id, title, description, organizer, event_d
       <Text><SubTitle>Organizer:</SubTitle> {organizer }</Text>
       <Text><SubTitle>Date:</SubTitle> {formattedDate}</Text>
       <div>
-        <Link to=''>Register</Link>
+        <Link to={`${id}/registration`}>Register</Link>
         <Link to=''>View</Link>
       </div>
   </Card>
