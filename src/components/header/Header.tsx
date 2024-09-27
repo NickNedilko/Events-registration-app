@@ -1,7 +1,7 @@
 
 import {FC} from 'react';
-import { HeaderStyled } from './header.styled';
 import { SiteLogo } from '../logo/Logo';
+import { HeaderStyled } from './Header.styled';
 
 
 

@@ -21,7 +21,7 @@ const EventPage = () => {
 
 
     return (
-        <EventsList loading={isLoading} page={page} events={data.events} onClick={setPage} quantity={data.quantity} />
+        <EventsList loading={isLoading} page={page} events={data.events} onClick={(page)=>setPage(page)} quantity={data.quantity} />
     )
 }
 export default EventPage;

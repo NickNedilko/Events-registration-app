@@ -10,7 +10,7 @@ interface EventList {
     page: number;
     quantity: number;
     events: Event[];
-    onClick?: ()=>void;
+    onClick: (page: number)=>void;
 } 
 
 const EventsList: FC<EventList> = ({loading, page, events, onClick, quantity}) => {

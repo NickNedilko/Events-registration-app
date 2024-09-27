@@ -26,8 +26,15 @@
 import { PaginationItem } from '@mui/material';
 import Pagination from '@mui/material/Pagination';
 import { Wrapper } from './Pagination.styled';
+import { FC } from 'react';
 
-const PaginationRounded = ({ quantity, page, onClick }) => {
+interface Pagination {
+  quantity: number;
+  page: number;
+  onClick: (page: number)=>void
+}
+
+const PaginationRounded:FC<Pagination> = ({ quantity, page, onClick }) => {
 
     const itemsPerPage = 6;
     const totalPages = quantity / itemsPerPage;
