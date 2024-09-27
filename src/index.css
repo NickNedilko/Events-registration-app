@@ -12,6 +12,10 @@
   scroll-behavior: smooth;
 }
 
+html,
+body {
+  height: 100%;
+}
 body {
   margin: 0;
   font-family: "Roboto", -apple-system, sans-serif;
@@ -20,6 +24,11 @@ body {
   background-color: var(--bgd-color);
 }
 
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const Card = styled.li`
@@ -47,4 +48,18 @@ font-weight: 800;
 margin-right: 8px;
 font-size: 18px;
 color: black
+`
+
+export const LinkWrapper = styled.div`
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-around;
+`
+
+export const StyledLink = styled(Link)`
+    font-size: 18px;
+    color: antiquewhite;
+    &:hover{
+        color: #edf12d;
+    }
 `

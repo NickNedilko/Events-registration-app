@@ -1,7 +1,6 @@
 
 import {  FC} from "react";
-import { Link } from "react-router-dom";
-import { Card, SubTitle, Text, Title } from "./EventCard.styled";
+import { Card, LinkWrapper, StyledLink, SubTitle, Text, Title } from "./EventCard.styled";
 import { Event } from "../../types/types";
 
 
@@ -17,10 +16,10 @@ export const EventCard: FC<Event> = ({ _id, title, description, organizer, event
       <Text>{description}</Text>
       <Text><SubTitle>Organizer:</SubTitle> {organizer }</Text>
       <Text><SubTitle>Date:</SubTitle> {formattedDate}</Text>
-      <div>
-        <Link to={`${_id}/registration`}>Register</Link>
-        <Link to={`${_id}/participants`}>View</Link>
-      </div>
+      <LinkWrapper>
+        <StyledLink to={`${_id}/registration`}>Register</StyledLink>
+        <StyledLink to={`${_id}/participants`}>View</StyledLink>
+      </LinkWrapper>
   </Card>
   );
 };

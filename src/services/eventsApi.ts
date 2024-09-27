@@ -18,8 +18,8 @@ export interface EventParticipantsProp{
     event_title: string;
 }
 
-export const getAllEvents = async (page: number):Promise<EventProp> => {
-   return (await axiosInstance.get<EventProp>('events', {params:{page}})).data    
+export const getAllEvents = async (page: number, sortBy: string):Promise<EventProp> => {
+   return (await axiosInstance.get<EventProp>('events', {params:{page, sortBy}})).data    
 }
 
 export const addEventParticipant = async (data:EventParticipantProp): Promise<EventParticipantsProp> => {

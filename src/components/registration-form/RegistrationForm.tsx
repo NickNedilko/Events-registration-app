@@ -44,10 +44,10 @@ const RegistrationForm:FC<any> = ({id}) => {
     };
 
     const validationSchema = Yup.object({
-        fullName: Yup.string().required('Required'),
-        email: Yup.string().email('Invalid email format').required('Required'),
-        dateOfBirth: Yup.date().required('Required').nullable(),
-        info: Yup.string().required('Required'),
+        fullName: Yup.string().required('Full name is required'),
+        email: Yup.string().email('Invalid email format').required('E-mail is required'),
+        dateOfBirth: Yup.date().required('Birth date is required').nullable(),
+        info: Yup.string().required('required'),
     });
 
     const handleSubmit = ( values: EventParticipant) => {
@@ -68,8 +68,6 @@ const RegistrationForm:FC<any> = ({id}) => {
                     <Typography variant="h4" gutterBottom>
                         Registration Form
                     </Typography>
-
-                    
                             <Field
                                 name="fullName"
                                 as={TextField}
@@ -80,8 +78,7 @@ const RegistrationForm:FC<any> = ({id}) => {
                                 value={values.fullName}
                                 error={touched.fullName && Boolean(errors.fullName)}
                                 helperText={touched.fullName && errors.fullName}
-                            />
-                        
+                            /> 
                             <Field
                                 name="email"
                                 as={TextField}
