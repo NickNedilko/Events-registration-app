@@ -5,7 +5,7 @@ import { Wrapper } from "./SortedByEvents.styled";
 
 interface SortedByEvents {
     sortBy: string;
-    handleChange: () => void;
+    handleChange: (sortBy:any) => void;
 }
 
 

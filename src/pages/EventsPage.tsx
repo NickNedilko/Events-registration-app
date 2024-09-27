@@ -28,7 +28,7 @@ const EventPage = () => {
 
     return (
     <>
-            <SortedByEvents sortBy={sortBy} handleChange={setSearchParams}
+            <SortedByEvents sortBy={sortBy} handleChange={(sortBy)=>setSearchParams(sortBy)}
                      />
         <EventsList loading={isLoading} page={page} events={data.events} onClick={(page)=>setPage(page)} quantity={data.quantity} />
             
