@@ -1,5 +1,5 @@
 export interface Event{
-    id: string;
+    _id: string;
     title: string;
     description: string;
     event_date: string;
@@ -7,6 +7,7 @@ export interface Event{
 }
 
 export interface EventParticipant{
+        _id?: string;
         fullName: string;
         email: string;
         dateOfBirth: string;

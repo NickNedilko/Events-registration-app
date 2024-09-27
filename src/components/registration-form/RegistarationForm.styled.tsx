@@ -38,3 +38,5 @@ export const GroupRadio = styled.div`
     display: flex;
     gap: 15px;
 `
+
+

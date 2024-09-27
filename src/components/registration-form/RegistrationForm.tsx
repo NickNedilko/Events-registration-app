@@ -2,13 +2,13 @@
 import { Formik, Form, Field } from 'formik';
 import {
     TextField,
-    Button,
     FormControl,
     FormLabel,
     RadioGroup,
     FormControlLabel,
     Radio,
-    Typography
+    Typography,
+    Button
 } from '@mui/material';
 import * as Yup from 'yup';
 import { GroupRadio, StyledForm, Wrapper } from './RegistarationForm.styled';
@@ -16,14 +16,17 @@ import {  useMutation, useQueryClient } from '@tanstack/react-query';
 import { addEventParticipant } from '../../services/eventsApi';
 import { EventParticipant } from '../../types/types';
 import { FC } from 'react';
+import {  ThreeDots } from 'react-loader-spinner';
+import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 
-const RegistrationForm:FC<string> = ({itemId}) => {
-
+const RegistrationForm:FC<any> = ({id}) => {
+    const navigate = useNavigate()
     const queryClient = useQueryClient();
 
     const { mutateAsync, isPending } = useMutation({
-       mutationKey: ['partisipant', itemId],
-    mutationFn: (data)=> addEventParticipant(itemId, data),
+    //    mutationKey: ['partisipant', itemId],
+    mutationFn: addEventParticipant,
     onSuccess: () => {
       queryClient.invalidateQueries({
         queryKey: ['companies'],
@@ -48,11 +51,11 @@ const RegistrationForm:FC<string> = ({itemId}) => {
     });
 
     const handleSubmit = ( values: EventParticipant) => {
-        mutateAsync(itemId, values );
+        mutateAsync({ id, values });
+        toast.success('You successfully registrated on this event')
+        navigate('/events')
     };
-// (values) => {
-//         mutation.mutate({ id: itemId, data: values });
-//       }}
+
     return (
         <Formik
             initialValues={initialValues}
@@ -124,8 +127,15 @@ const RegistrationForm:FC<string> = ({itemId}) => {
                                 )}
                             </FormControl>
                        
-                            <Button type="submit" variant="contained" color="primary">
-                                Register
+                            <Button type="submit" variant="contained" color="primary" >
+                                {isPending ? <ThreeDots
+                                 visible={true}
+                                 height="35"
+                                 width="35"
+                                 color="#f5f9f4"
+                                 radius="20"
+                                 ariaLabel="three-dots-loading"
+                                 />: "Register"}
                             </Button>
                 </StyledForm>
                 </Wrapper>

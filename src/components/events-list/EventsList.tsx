@@ -1,28 +1,24 @@
-import { useQuery } from "@tanstack/react-query";
-import { FC, useState } from "react";
-import { getAllEvents } from "../../services/eventsApi";
+import { FC} from "react";
 import { EventCard } from "../event-card/EventCard";
 import { List } from "./EventList.styled";
 import PaginationRounded from "../pagination/Pagination";
 import { Hourglass } from "react-loader-spinner";
+import { Event } from "../../types/types";
 
+interface EventList {
+    loading: boolean;
+    page: number;
+    quantity: number;
+    events: Event[];
+    onClick?: ()=>void;
+} 
 
-
-const EventsList: FC = () => {
-    const [page, setPage] = useState(1);
+const EventsList: FC<EventList> = ({loading, page, events, onClick, quantity}) => {
    
-    const { data, isLoading } = useQuery({
-        queryKey: ['events', page],
-        queryFn: () => getAllEvents(page),
-        
-    })
-    if (!data) {
-        return
-    }
 
     return (
         <>
-            {isLoading ? <Hourglass
+            {loading ? <Hourglass
                       visible={true}
                       height="80"
                       width="80"
@@ -31,9 +27,9 @@ const EventsList: FC = () => {
                       colors={['#306cce', '#72a1ed']}
                       /> :
          <List>
-            {data?.events.map((event) => 
+            {events.map((event) => 
                 <EventCard
-                    key={event._id}
+                    key={event.id}
                     id={event._id}
                     title={event.title}
                     description={event.description}
@@ -43,7 +39,7 @@ const EventsList: FC = () => {
             </List>
         }
 
-            <PaginationRounded quantity={data.quantity} page={page} onClick={setPage} />
+            <PaginationRounded quantity={quantity} page={page} onClick={onClick} />
         </>
   ) ;
 };

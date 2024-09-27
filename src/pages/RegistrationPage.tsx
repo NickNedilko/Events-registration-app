@@ -4,11 +4,13 @@ import RegistrationForm  from "../components/registration-form/RegistrationForm"
 
 
 const RegistrationPage = () => {
-    const {id} = useParams();
-    console.log(id)
+    const { id } = useParams();
+    if (!id) {
+        return
+    }
     return (
         <>
-            <RegistrationForm itemId={id} />
+            <RegistrationForm id={id} />
         </>
     )
 }

@@ -3,6 +3,7 @@ import { Outlet } from "react-router-dom";
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
 import { Container } from "./SharedLayout.styled";
+import { Toaster } from "react-hot-toast";
 
 export const SharedLayout = () => {
     return (       
@@ -14,7 +15,8 @@ export const SharedLayout = () => {
             <Outlet />
                     </Suspense> 
                     
-            </Container>   
+                </Container> 
+            <Toaster />    
         </main>
         <Footer />
     </>

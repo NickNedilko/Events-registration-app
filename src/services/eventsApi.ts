@@ -1,29 +1,32 @@
 import { Event, EventParticipant } from "../types/types";
 import { axiosInstance } from "./instance"
 
-export enum ApiRoutes {
-    GET_EVENTS = "events",
-    ADD_PARTICIPANT = "registration"
-   
-
-}
-
 
 export interface EventProp {
     events: Event[],
     quantity: number
 } 
 
-export interface EventParticipantProp extends EventParticipant{
+export interface EventParticipantProp{
     id: string;
+    values: EventParticipant
 
+}
+
+export interface EventParticipantsProp{
+    participants: EventParticipant[];
 }
 
 export const getAllEvents = async (page: number):Promise<EventProp> => {
-   return (await axiosInstance.get<EventProp>(ApiRoutes.GET_EVENTS, {params:{page}})).data    
+   return (await axiosInstance.get<EventProp>('events', {params:{page}})).data    
 }
 
-export const addEventParticipant = async (id: string, values:EventParticipant ): Promise<EventParticipantProp> => {
-    return (await axiosInstance.post<EventParticipantProp>(`${id}/${ApiRoutes.ADD_PARTICIPANT}`, values)).data;
+export const addEventParticipant = async (data:EventParticipantProp): Promise<EventParticipantsProp> => {
+    const { id, values } = data;
+    return (await axiosInstance.post<EventParticipantsProp>(`events/${id}/registration`, values)).data;
  
+}
+
+export const getEventParticipants = async (owner: string):Promise<EventParticipantsProp> => {
+   return (await axiosInstance.get<EventParticipantsProp>(`events/${owner}/participants`, {params:{owner}})).data    
 }
