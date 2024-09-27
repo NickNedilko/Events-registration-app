@@ -51,6 +51,9 @@ a {
   color: black;
   text-decoration: none;
 }
+.react-datepicker__close-icon {
+  display: none !important;
+}
 
 ul,
 li {

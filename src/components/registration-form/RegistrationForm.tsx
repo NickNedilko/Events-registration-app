@@ -19,6 +19,7 @@ import { FC } from 'react';
 import {  ThreeDots } from 'react-loader-spinner';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
+import { MyDatePicker } from '../date-piker/DatePiker';
 
 const RegistrationForm:FC<any> = ({id}) => {
     const navigate = useNavigate()
@@ -91,20 +92,7 @@ const RegistrationForm:FC<any> = ({id}) => {
                                 error={touched.email && Boolean(errors.email)}
                                 helperText={touched.email && errors.email}
                             />
-                        
-                            <Field
-                                name="dateOfBirth"
-                                as={TextField}
-                                label="Date of Birth"
-                                type="date"
-                                InputLabelProps={{ shrink: true }}
-                                fullWidth
-                                onChange={handleChange}
-                                onBlur={handleBlur}
-                                value={values.dateOfBirth}
-                                error={touched.dateOfBirth && Boolean(errors.dateOfBirth)}
-                                helperText={touched.dateOfBirth && errors.dateOfBirth}
-                            />
+                  <MyDatePicker name="dateOfBirth" label="Date of Birth" />
                        
                             <FormControl component="fieldset" error={touched.info && Boolean(errors.info)}>
                                 <FormLabel component="legend">Where did you hear about this event?</FormLabel>
