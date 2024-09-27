@@ -39,7 +39,7 @@ const PaginationRounded:FC<Pagination> = ({ quantity, page, onClick }) => {
     const itemsPerPage = 6;
     const totalPages = quantity / itemsPerPage;
 
-  const handleChange = (_, value:number) => {
+  const handleChange = (_:any, value:number) => {
     onClick(value);
   };
 
