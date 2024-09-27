@@ -32,7 +32,7 @@ const ParticipantList: FC<ParticipantList> = ({loading, participants, title}) =>
                     <Title>Event {title} participants:</Title>
 
                     <Wrapper>
-                        <SearchInput value={undefined} onChange={undefined}/>
+                        <SearchInput value={''} onChange={console.log}/>
                     </Wrapper>
 
                  <List>

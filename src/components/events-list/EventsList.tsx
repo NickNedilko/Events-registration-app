@@ -2,7 +2,6 @@ import { FC} from "react";
 import { EventCard } from "../event-card/EventCard";
 import { List } from "./EventList.styled";
 import PaginationRounded from "../pagination/Pagination";
-import { Hourglass } from "react-loader-spinner";
 import { Event } from "../../types/types";
 import { Loader } from "../loader/Loader";
 
