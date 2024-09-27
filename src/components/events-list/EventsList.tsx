@@ -4,6 +4,7 @@ import { List } from "./EventList.styled";
 import PaginationRounded from "../pagination/Pagination";
 import { Hourglass } from "react-loader-spinner";
 import { Event } from "../../types/types";
+import { Loader } from "../loader/Loader";
 
 interface EventList {
     loading: boolean;
@@ -18,14 +19,8 @@ const EventsList: FC<EventList> = ({loading, page, events, onClick, quantity}) =
 
     return (
         <>
-            {loading ? <Hourglass
-                      visible={true}
-                      height="80"
-                      width="80"
-                      ariaLabel="hourglass-loading"
-                      wrapperStyle={{display: 'block', margin: '0 auto'}}
-                      colors={['#306cce', '#72a1ed']}
-                      /> :
+            
+            {loading ? <Loader/> :
          <List>
             {events.map((event) => 
                 <EventCard

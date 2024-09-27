@@ -28,7 +28,7 @@ export const SubTitle = styled.span`
 font-weight: 800;
 margin-right: 8px;
 font-size: 18px;
-color: black
+color: grey
 `
 export const Wrapper = styled.div`
     display: flex;

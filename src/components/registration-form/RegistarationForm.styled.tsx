@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Form } from 'formik';
+import { Typography } from "@mui/material";
 
 
 export const Wrapper = styled.div`
@@ -14,9 +15,9 @@ export const Text = styled.p`
     font-size: 16px;
 `
 
-export const Title = styled.h1`
-    color: blue;
-    font-size: 25px;
+export const Title = styled(Typography)`
+    color: var(--title-color);
+    font-size: 30px;
     font-weight: 600;
 `
 

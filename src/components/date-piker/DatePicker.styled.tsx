@@ -13,5 +13,6 @@ background-color: var(--bgd-color);
 `
 export const Wrapper = styled.div`
     display: flex;
+    color: #49a4ea;
     justify-content: right;
 `

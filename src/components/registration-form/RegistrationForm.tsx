@@ -11,7 +11,7 @@ import {
     Button
 } from '@mui/material';
 import * as Yup from 'yup';
-import { GroupRadio, StyledForm, Wrapper } from './RegistarationForm.styled';
+import { GroupRadio, StyledForm, Title, Wrapper } from './RegistarationForm.styled';
 import {  useMutation, useQueryClient } from '@tanstack/react-query';
 import { addEventParticipant } from '../../services/eventsApi';
 import { EventParticipant } from '../../types/types';
@@ -66,9 +66,9 @@ const RegistrationForm:FC<any> = ({id}) => {
             {({ values, handleChange, handleBlur, touched, errors }) => (
                 <Wrapper>
                       <StyledForm>
-                    <Typography variant="h4" gutterBottom>
+                    <Title variant="h4" gutterBottom>
                         Registration Form
-                    </Typography>
+                        </Title>
                             <Field
                                 name="fullName"
                                 as={TextField}

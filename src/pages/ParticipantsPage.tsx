@@ -6,6 +6,7 @@ import { useQuery } from "@tanstack/react-query";
 
 
 
+
 const ParcitipantPage = () => {
     const { id: owner } = useParams();
 
@@ -23,7 +24,8 @@ const ParcitipantPage = () => {
     }
 
     return (
-        <ParticipantList participants={data.participants} loading={isLoading } title={data.event_title} />
+        
+        <ParticipantList participants={data.participants} loading={isLoading } title={data.event_title} />        
     )
 }
 export default ParcitipantPage;

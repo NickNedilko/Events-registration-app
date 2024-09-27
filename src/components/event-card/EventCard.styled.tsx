@@ -44,10 +44,12 @@ export const Text = styled.p`
 ` 
 
 export const SubTitle = styled.span`
+
+align-items: center;
 font-weight: 800;
 margin-right: 8px;
 font-size: 18px;
-color: black
+color: grey;
 `
 
 export const LinkWrapper = styled.div`
@@ -60,6 +62,6 @@ export const StyledLink = styled(Link)`
     font-size: 18px;
     color: antiquewhite;
     &:hover{
-        color: #edf12d;
+        color: #eef152;
     }
 `

@@ -4,9 +4,15 @@ import { getAllEvents } from "../services/eventsApi";
 import { useState } from "react";
 import SortedByEvents from "../components/sorted-by-events/SortedByEvents";
 import { useSearchParams } from "react-router-dom";
+import styled from "styled-components";
+import { Title } from "../components/participants-list/ParticipantList.styled";
 
 
-
+const Wrapper = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+`
 
 
 const EventPage = () => {
@@ -28,8 +34,11 @@ const EventPage = () => {
 
     return (
     <>
-            <SortedByEvents sortBy={sortBy} handleChange={(sortBy)=>setSearchParams(sortBy)}
-                     />
+                <Title>The best events</Title>
+            <Wrapper>
+                 <SortedByEvents sortBy={sortBy} handleChange={(sortBy) => setSearchParams(sortBy)} />
+            <p>Find Events: {data.quantity}</p>
+            </Wrapper>
         <EventsList loading={isLoading} page={page} events={data.events} onClick={(page)=>setPage(page)} quantity={data.quantity} />
             
     </>
