@@ -30,3 +30,8 @@ margin-right: 8px;
 font-size: 18px;
 color: black
 `
+export const Wrapper = styled.div`
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+`

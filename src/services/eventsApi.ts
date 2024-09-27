@@ -15,6 +15,7 @@ export interface EventParticipantProp{
 
 export interface EventParticipantsProp{
     participants: EventParticipant[];
+    event_title: string;
 }
 
 export const getAllEvents = async (page: number):Promise<EventProp> => {

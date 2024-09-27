@@ -9,6 +9,7 @@ export interface Event{
 export interface EventParticipant{
         _id?: string;
         fullName: string;
+        avatar?: string;
         email: string;
         dateOfBirth: string;
         info: string;

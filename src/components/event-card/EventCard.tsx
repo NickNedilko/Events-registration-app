@@ -8,7 +8,7 @@ import { Event } from "../../types/types";
 
 
 
-export const EventCard: FC<Event> = ({ id, title, description, organizer, event_date }) => {
+export const EventCard: FC<Event> = ({ _id, title, description, organizer, event_date }) => {
   
   const formattedDate = new Date(event_date).toLocaleDateString();
   return (
@@ -18,8 +18,8 @@ export const EventCard: FC<Event> = ({ id, title, description, organizer, event_
       <Text><SubTitle>Organizer:</SubTitle> {organizer }</Text>
       <Text><SubTitle>Date:</SubTitle> {formattedDate}</Text>
       <div>
-        <Link to={`${id}/registration`}>Register</Link>
-        <Link to={`${id}/participants`}>View</Link>
+        <Link to={`${_id}/registration`}>Register</Link>
+        <Link to={`${_id}/participants`}>View</Link>
       </div>
   </Card>
   );

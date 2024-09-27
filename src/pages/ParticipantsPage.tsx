@@ -23,7 +23,7 @@ const ParcitipantPage = () => {
     }
 
     return (
-        <ParticipantList participants={data.participants} loading={isLoading } />
+        <ParticipantList participants={data.participants} loading={isLoading } title={data.event_title} />
     )
 }
 export default ParcitipantPage;

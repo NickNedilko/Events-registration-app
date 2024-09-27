@@ -29,8 +29,8 @@ const EventsList: FC<EventList> = ({loading, page, events, onClick, quantity}) =
          <List>
             {events.map((event) => 
                 <EventCard
-                    key={event.id}
-                    id={event._id}
+                    key={event._id}
+                    _id={event._id}
                     title={event.title}
                     description={event.description}
                     event_date={event.event_date}
