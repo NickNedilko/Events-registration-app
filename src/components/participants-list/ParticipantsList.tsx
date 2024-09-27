@@ -36,7 +36,7 @@ const ParticipantList: FC<ParticipantList> = ({loading, participants, title}) =>
                     key={participant._id}
                     fullName={participant.fullName}
                     email={participant.email}
-                    avatar={participant.avatar}
+                    avatar={participant.avatar as string}
                     
                 />
            )} 
