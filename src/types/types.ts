@@ -14,3 +14,9 @@ export interface EventParticipant{
         dateOfBirth: string;
         info: string;
 }
+
+export interface SearchParams {
+    q?: string;
+    sort?: string;
+    page?: number;
+}

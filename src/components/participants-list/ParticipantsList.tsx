@@ -5,7 +5,7 @@ import { FC, } from "react";
 
 import { Hourglass } from "react-loader-spinner";
 import { List, Title, Wrapper } from "./ParticipantList.styled";
-import { EventParticipant } from "../../types/types";
+import { EventParticipant, SearchParams } from "../../types/types";
 import ParticipantCard from "../participant-card/ParticipantCard";
 import { SearchInput } from "../search-input/SearchInput";
 
@@ -15,7 +15,7 @@ interface ParticipantList{
     participants: EventParticipant[];
     search: string;
     onSearch: (query: string) => void;
-    setSearchParams: (params) => void
+    setSearchParams: (param: SearchParams) => void
 }
 
 const ParticipantList: FC<ParticipantList> = ({loading, participants, search, onSearch, title, setSearchParams}) => {
