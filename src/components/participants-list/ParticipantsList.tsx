@@ -15,7 +15,7 @@ interface ParticipantList{
     participants: EventParticipant[];
     search: string;
     onSearch: (query: string) => void;
-    setSearchParams: (param: SearchParams) => void
+    setSearchParams: (param: SearchParams ) => void
 }
 
 const ParticipantList: FC<ParticipantList> = ({loading, participants, search, onSearch, title, setSearchParams}) => {

@@ -3,6 +3,7 @@ import ParticipantList from "../components/participants-list/ParticipantsList";
 import { getEventParticipants } from "../services/eventsApi";
 import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
+import { SearchParams } from "../types/types";
 
 
 
@@ -39,7 +40,7 @@ const normalizedSearch = searchQuery.toLocaleLowerCase()
             title={data.event_title}
             search={searchQuery}
             onSearch={(search) => setSearchQuery(search)}
-            setSearchParams={(param) => setSearchParams(param)} />        
+            setSearchParams={(param) => setSearchParams(param as string)} />        
     )
 }
 export default ParcitipantPage;
