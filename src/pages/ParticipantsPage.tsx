@@ -3,7 +3,7 @@ import ParticipantList from "../components/participants-list/ParticipantsList";
 import { getEventParticipants } from "../services/eventsApi";
 import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
-import { SearchParams } from "../types/types";
+
 
 
 
