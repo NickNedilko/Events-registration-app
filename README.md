@@ -2,7 +2,7 @@
 
 # Events registration application
 
-[Link to live page](events-registration-app-eight.vercel.app)
+[Link to live page](https://events-registration-app-eight.vercel.app)
 
 [Link to frontend repo](https://github.com/NickNedilko/Events-registration-app)
 [Link to backend repo](https://github.com/NickNedilko/Events-registration-backend)

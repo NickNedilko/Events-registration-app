@@ -12,10 +12,13 @@ import { SearchInput } from "../search-input/SearchInput";
 interface ParticipantList{
     loading: boolean;
     title: string;
-    participants: EventParticipant[]
+    participants: EventParticipant[];
+    search: string;
+    onSearch: (query: string) => void;
+    setSearchParams: (params) => void
 }
 
-const ParticipantList: FC<ParticipantList> = ({loading, participants, title}) => {
+const ParticipantList: FC<ParticipantList> = ({loading, participants, search, onSearch, title, setSearchParams}) => {
   
    
     return (
@@ -32,7 +35,7 @@ const ParticipantList: FC<ParticipantList> = ({loading, participants, title}) =>
                     <Title>Event {title} participants:</Title>
 
                     <Wrapper>
-                        <SearchInput value={''} onChange={console.log}/>
+                        <SearchInput value={search} setSearch={onSearch} setSearchParams={setSearchParams}/>
                     </Wrapper>
 
                  <List>
